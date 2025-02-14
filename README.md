@@ -51,14 +51,12 @@ This script creates the image definition and builds the custom image.
 - `subscriptionID` (string): The Azure subscription ID. Default is the current context subscription ID.
 - `resourceGroup` (string): The resource group for the image. Default is "devbox".
 - `location` (string): The location for the resources. Default is "eastus2".
-- `runOutputName` (string): The name of the run output. Default is "aibCustWinManImg01".
-- `imageDefName` (string): The name of the image definition. Default is "vscodeImageDef".
-- `imageTemplateName` (string): The name of the image template. Default is "vscodeWinTemplate".
-- `imageOfferName` (string): The name of the image offer. Default is "vscodebox".
+- `imageName` (string): The name of the image. Default is "myWindowsImage".
 - `imageSkuName` (string): The SKU name of the image. Default is "1-0-0".
 - `imageBuildIdentityName` (string): The name of the image build identity. Default is "AzureImageBuilderId".
 - `galleryName` (string): The name of the gallery. Default is "devboxGallery".
 - `companyName` (string): The name of the company. Default is "myCompany".
+- `skipGalleryCreation` (bool): Whether to skip the gallery creation. Default is `$false`.
 
 #### Usage
 
