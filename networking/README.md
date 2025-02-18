@@ -23,30 +23,34 @@ az ad sp create-for-rbac --name <name> --role <role> --scopes <scope>
 ### Example
 
 ```sh
-az ad sp create-for-rbac --name myServicePrincipal --role Contributor --scopes /subscriptions/<subscription-id>/resourceGroups/myResourceGroup
+az ad sp create-for-rbac --name myServicePrincipal 
 ```
 
-This example creates a service principal named `myServicePrincipal` with the `Contributor` role assigned to the specified resource group.
+This example creates a service principal named `myServicePrincipal` 
 
-### Deploy `role_assignment.bicep`
+### Role Assignments for Managed Network
 
-This module assigns the necessary roles to the subnet for the DevBox.
+As part of the process to create a managed network pointing to a subnet in another subscription, you need to assign roles to the subnet and the resource group hosting the Dev Center. Specifically, you will assign the `Network Contributor` role to the subnet and the `Contributor` role to the resource group.
 
-#### Parameters
-
-- `principalId` (string): The ID of the principal to assign the role to.
-- `subnetId` (string): The ID of the subnet.
-
-#### Example Deployment
+#### Assign `Network Contributor` Role to Subnet
 
 ```sh
-az deployment group create \
-    --resource-group myResourceGroup \
-    --template-file role_assignment.bicep \
-    --parameters principalId="<principal-id>" \
-                 subnetId="/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Network/virtualNetworks/<vnet-name>/subnets/<subnet-name>"
+az role assignment create \
+    --assignee <service-principal-id> \
+    --role "Network Contributor" \
+    --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Network/virtualNetworks/<vnet-name>/subnets/<subnet-name>
 ```
 
+#### Assign `Contributor` Role to Resource Group
+
+```sh
+az role assignment create \
+    --assignee <service-principal-id> \
+    --role "Contributor" \
+    --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group>
+```
+
+Replace `<service-principal-id>`, `<subscription-id>`, `<resource-group>`, `<vnet-name>`, and `<subnet-name>` with the appropriate values for your environment.
 
 ### Deploy `network_connection.bicep`
 
