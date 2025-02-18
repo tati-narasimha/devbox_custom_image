@@ -1,0 +1,10 @@
+{
+    "Name": "Network Subnet Joiner",
+    "Description": "Perform Join on a subnet",
+    "Actions": [
+        "Microsoft.Network/virtualNetworks/subnets/join/action"
+    ],
+    "AssignableScopes": [
+        "/subscriptions/68be309e-79c1-483f-886f-0351d776e20c"
+    ]
+}

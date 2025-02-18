@@ -7,7 +7,7 @@ resource devbox_subnet_id 'Microsoft.Network/virtualNetworks/subnets@2024-05-01'
   name: subnetId
 }
 
-resource devbox_network_join_custom_role 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+resource devbox_network_join_role_assignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: 'devbox-network-join-custom-role'
   scope: devbox_subnet_id
   properties: {
