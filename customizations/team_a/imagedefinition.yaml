@@ -5,19 +5,19 @@ image: microsoftvisualstudio_visualstudioplustools_vs-2022-pro-general-win11-m36
 description: "This definition is for the Team A customizations"
 
 tasks:
-  - name: ~/winget
+  - name: winget
     parameters:
       package: Microsoft.DotNet.SDK.8
       runAsUser: false
-  - name: ~/winget
+  - name: winget
     parameters:
       package: OpenJS.NodeJS
       runAsUser: false
-  - name: ~/winget
+  - name: winget
     parameters:
       package: Postman.Postman
       runAsUser: false  
-  - name: ~/winget
+  - name: winget
     parameters:
       package: TortoiseHg.TortoiseHg
       runAsUser: false
