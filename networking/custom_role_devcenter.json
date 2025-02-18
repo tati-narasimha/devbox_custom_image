@@ -1,0 +1,10 @@
+{
+    "Name": "DevCenter Admin",
+    "Description": "Perform DevCenter Actions",
+    "Actions": [
+        "Microsoft.DevCenter/devcenter/*"
+    ],
+    "AssignableScopes": [
+        "/subscriptions/ac9decd5-c5b4-40dd-b637-1b0294837f8f"
+    ]
+}
