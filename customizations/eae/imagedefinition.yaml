@@ -17,3 +17,9 @@ tasks:
     parameters:
       package: TortoiseSVN.TortoiseSVN
       runAsUser: false
+  - name: choco
+    parameters:
+      package: netfx-4.8.1
+  - name: choco
+    parameters:
+      package: netfx-4.8.1-devpac
