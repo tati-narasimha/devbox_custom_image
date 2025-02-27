@@ -23,3 +23,12 @@ tasks:
   - name: choco
     parameters:
       package: netfx-4.8.1-devpac
+  - name: choco
+    parameters:
+      package: tortoisegit --version=2.17.0.2
+  - name: choco
+    parameters:
+      package: notepadplusplus --version=8.7.7
+  - name: choco
+    parameters:
+      package: python --version=3.13.2
