@@ -25,10 +25,10 @@ tasks:
       package: netfx-4.8.1-devpack 4.8.1
   - name: choco
     parameters:
-      package: TortoiseGit 2.17.0.2
+      package: tortoisegit --version=2.17.0.2
   - name: choco
     parameters:
-      package: notepadplusplus 8.7.7
+      package: notepadplusplus --version=8.7.7
   - name: choco
     parameters:
-      package: python 3.13.1
+      package: python --version=3.13.2
