@@ -22,7 +22,7 @@ tasks:
       package: netfx-4.8.1
   - name: choco
     parameters:
-      package: netfx-4.8.1-devpack 4.8.1
+      package: netfx-4.8.1-devpack
   - name: choco
     parameters:
       package: tortoisegit --version=2.17.0.2
